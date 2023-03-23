@@ -1,4 +1,4 @@
-package io.github.scafer.prices.crawler.mobile;
+package io.github.prices.crawler.mobile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,9 @@ import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import io.github.prices.crawler.mobile.BuildConfig;
+import io.github.prices.crawler.mobile.R;
 
 public class MainActivity extends AppCompatActivity {
 
