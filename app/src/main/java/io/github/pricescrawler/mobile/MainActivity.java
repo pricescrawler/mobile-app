@@ -1,4 +1,4 @@
-package io.github.prices.crawler.mobile;
+package io.github.pricescrawler.mobile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,8 +11,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import io.github.prices.crawler.mobile.BuildConfig;
-import io.github.prices.crawler.mobile.R;
+import io.github.pricescrawler.mobile.BuildConfig;
+import io.github.pricescrawler.mobile.R;
 
 public class MainActivity extends AppCompatActivity {
 

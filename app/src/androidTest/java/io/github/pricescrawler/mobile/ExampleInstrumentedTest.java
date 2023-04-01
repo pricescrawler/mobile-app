@@ -1,4 +1,4 @@
-package io.github.prices.crawler.mobile;
+package io.github.pricescrawler.mobile;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("io.github.prices.crawler.mobile", appContext.getPackageName());
+        assertEquals("io.github.pricescrawler.mobile", appContext.getPackageName());
     }
 }

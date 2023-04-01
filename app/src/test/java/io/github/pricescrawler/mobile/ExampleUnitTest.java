@@ -1,4 +1,4 @@
-package io.github.prices.crawler.mobile;
+package io.github.pricescrawler.mobile;
 
 import org.junit.Test;
 

@@ -6,9 +6,9 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "io.github.prices.crawler.mobile"
+        applicationId "io.github.pricescrawler.mobile"
         minSdk 30
-        targetSdk 30
+        targetSdk 33
         versionCode 1
         versionName "0.1.0"
 
