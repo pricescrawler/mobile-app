@@ -1,0 +1,93 @@
+{
+  "title": {
+    "base": "Prices Crawler",
+    "products-search": "Search Products",
+    "products-list": "Product List",
+    "product-details": "Product Details",
+    "maintenance": "Under Maintenance"
+  },
+  "menu": {
+    "home": "Search",
+    "product-list": "List ",
+    "about": "About",
+    "privacy-terms": "Privacy & Terms",
+    "order": {
+      "asc": "Price ⬆️",
+      "desc": "Price ⬇️",
+      "asc-price-per-quantity": "Price/Quantity ⬆️",
+      "desc-price-per-quantity": "Price/Quantity ⬇️"
+    },
+    "language": "Language",
+    "dark-mode": "Dark Mode",
+    "mobile-app": "Mobile App"
+  },
+  "general": {
+    "search-store": "Search Store",
+    "total-price": "Total Price",
+    "total-price-by-catalog": "Total Price by Catalog",
+    "search": "Search",
+    "search-for-some-product": "Search for a product",
+    "refresh-prices": "Refresh Prices",
+    "go": "Go",
+    "price-evolution": "Price Evolution",
+    "prices-history": "Price History",
+    "date": "Date",
+    "no-data": "Error loading data. Please refresh the page or try again later.",
+    "copy-to-clipboard": "Copy",
+    "list-upload": "Share Product List",
+    "expiration-text-1": "Your list will be deleted after the expiration date.",
+    "expiration-text-2": "Share expiration date:",
+    "yes": "Yes",
+    "no": "No",
+    "maintenance": "Please try again later. Available in:",
+    "product-list-replace": "Are you sure you want to import this product list? This will replace your current product list.",
+    "general.product-list-replace-title": "Import Product List:",
+    "error": "Error"
+  },
+  "pages": {
+    "about": {
+      "contact": "Contact",
+      "text1": "The main goal of this project is to enable the search of product prices in online stores and save them for future comparison and analysis.",
+      "text2": "Product data is collected automatically and may contain errors or inconsistencies. If you find any, please contact us.",
+      "text3": "This project is non-commercial and is not affiliated with any company or organization. It is open-source and can be used by anyone.",
+      "version": "Version"
+    },
+    "privacy-terms": {
+      "text1": "This website does not collect, store, or use any personal data.",
+      "text2": "It does not use cookies or any other tracking technologies.",
+      "delete-local-data-text": "This will delete all the data stored locally on your device, including product lists. This action cannot be undone.",
+      "delete-local-data-button": "Delete Local Data"
+    }
+  },
+  "data": {
+    "product-titles": {
+      "product-details": "Details",
+      "price-details": "Price Details",
+      "price-indicator": "Price Indicator",
+      "price-indicator-info": "Green - Price lower than the average price. Orange - Price equal to the average price. Red - Price higher than the average price.",
+      "price-min": "Min:",
+      "price-max": "Max:",
+      "price-avg": "Avg:",
+      "price-last": "Last:"
+    },
+    "product-fields": {
+      "image": "Image",
+      "reference": "Reference",
+      "name": "Name",
+      "regular-price": "Regular Price",
+      "sale-price": "Sale Price",
+      "price-per-quantity": "Price per Quantity",
+      "quantity": "Quantity",
+      "brand": "Brand",
+      "locale": "Locale",
+      "description": "Description",
+      "catalog": "Catalog",
+      "campaign-price": "Campaign Price",
+      "history-page": "History Page",
+      "store-page": "Store Page",
+      "details": "Details",
+      "add-to-list": "Add to List",
+      "remove-add": "Remove | Add"
+    }
+  }
+}

@@ -1,8 +1,9 @@
-# Prices Crawler - Mobile App
+# NativeBase Expo Template
 
-## Current version
+The official NativeBase template for [Expo](https://docs.expo.io/)
 
-## Description
+## Usage
 
-The main goal of this project is to enable [prices-crawler-content-base](https://github.com/prices-crawler/content-base)
-data consumption and visualization.
+```sh
+expo init my-app --template @native-base/expo-template
+```
