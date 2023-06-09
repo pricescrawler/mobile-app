@@ -1,4 +1,6 @@
-{
+import 'dotenv/config';
+
+export default {
   "expo": {
     "name": "Price Crawler",
     "slug": "price-crawler",
@@ -35,7 +37,14 @@
     "extra": {
       "eas": {
         "projectId": "fcf8532c-6bb7-497a-9e48-63df35d87d11"
-      }
+      },
+        "api": {
+            "domain": process.env.API_DOMAIN
+        },
+        "sentry": {
+          "enabled": process.env.SENTRY_ENABLED,
+          "dsn": process.env.SENTRY_DSN
+        }
     },
     "plugins": [
       "expo-localization"

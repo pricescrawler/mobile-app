@@ -1,8 +1,9 @@
 import axios from "axios";
+import Constants from "expo-constants";
 
 const source = axios.CancelToken.source();
 
-export const baseURL="https://content-api.prices-crawler.duckdns.org/api/v1/";
+export const baseURL=Constants.expoConfig.extra.api.domain+"api/v1/";
 
 const api = axios.create({
     baseURL:baseURL,

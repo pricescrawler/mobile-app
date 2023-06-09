@@ -24,19 +24,22 @@ export default function HomeScreen({navigation}) {
             let options = [];
 
             response.data[0].categories.forEach((locale)=>{
-                options.push({
-                    label: locale.description,
-                    value: locale.id,
-                    disabled: true
-                })
-                let parent = locale.id;
-                locale.catalogs.forEach((catalog)=>{
-                  options.push({
-                      label: catalog.name,
-                      value: catalog.id,
-                      parent: parent
-                  })
-                })
+                if(locale.active) {
+                    options.push({
+                        label: locale.description,
+                        value: locale.id,
+                        disabled: true
+                    })
+                    let parent = locale.id;
+                    locale.catalogs.forEach((catalog) => {
+                        if (catalog.active)
+                        options.push({
+                            label: catalog.name,
+                            value: catalog.id,
+                            parent: parent
+                        })
+                    })
+                }
             })
 
             setItems(options)
