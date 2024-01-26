@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "io.github.pricescrawler.mobile"
         minSdk 26
-        targetSdk 33
+        targetSdk 34
         versionCode 3
         versionName "0.1.2"
 
@@ -17,27 +17,28 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField "String", "SERVER_URL", "\"https://prices-crawler.vercel.app/\""
+            buildConfigField "String", "SERVER_URL", "\"${System.getenv("PRICES_CRAWLER_SERVER_URL_DEBUG") ?: project['prices.crawler.server.url.debug']}\""
         }
 
         release {
-            buildConfigField "String", "SERVER_URL", "\"https://prices-crawler.vercel.app/\""
+            buildConfigField "String", "SERVER_URL", "\"${System.getenv("PRICES_CRAWLER_SERVER_URL_RELEASE") ?: project['prices.crawler.server.url.release']}\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    namespace 'io.github.pricescrawler.mobile'
 }
 
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
