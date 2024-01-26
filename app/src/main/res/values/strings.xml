@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Prices Crawler</string>
+    <string name="internet_access_required">Internet Access Required</string>
+    <string name="refresh">Refresh</string>
 </resources>
