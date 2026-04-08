@@ -29,7 +29,7 @@ android {
         }
         release {
             buildConfigField "String", "SERVER_URL", "\"${System.getenv("PRICES_CRAWLER_SERVER_URL_RELEASE") ?: project['prices.crawler.server.url.release']}\""
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
         }
