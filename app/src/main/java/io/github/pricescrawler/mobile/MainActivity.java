@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
-        getSupportActionBar().hide();
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
@@ -54,14 +56,18 @@ public class MainActivity extends AppCompatActivity {
     private void showWebView() {
         setContentView(R.layout.activity_main);
 
+        View root = findViewById(R.id.mainRoot);
         webview = findViewById(R.id.webview);
         ProgressBar progressBar = findViewById(R.id.progressBar);
 
-        ViewCompat.setOnApplyWindowInsetsListener(webview, (v, insets) -> {
-            Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+        ViewCompat.setOnApplyWindowInsetsListener(root, (v, insets) -> {
+            Insets bars = insets.getInsets(
+                    WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout()
+            );
             v.setPadding(bars.left, bars.top, bars.right, bars.bottom);
-            return WindowInsetsCompat.CONSUMED;
+            return insets;
         });
+        ViewCompat.requestApplyInsets(root);
 
         WebSettings webSettings = webview.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -101,10 +107,13 @@ public class MainActivity extends AppCompatActivity {
 
         View root = findViewById(R.id.noInternetRoot);
         ViewCompat.setOnApplyWindowInsetsListener(root, (v, insets) -> {
-            Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            Insets bars = insets.getInsets(
+                    WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout()
+            );
             v.setPadding(bars.left, bars.top, bars.right, bars.bottom);
-            return WindowInsetsCompat.CONSUMED;
+            return insets;
         });
+        ViewCompat.requestApplyInsets(root);
 
         Button refreshButton = findViewById(R.id.refreshButton);
         refreshButton.setOnClickListener(view -> {
