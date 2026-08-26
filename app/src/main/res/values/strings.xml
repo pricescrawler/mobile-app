@@ -3,4 +3,5 @@
     <string name="internet_access_required">Internet Access Required</string>
     <string name="refresh">Refresh</string>
     <string name="no_internet_retry">Still no internet access</string>
+    <string name="no_app_found_for_link">No app found to open this link</string>
 </resources>
