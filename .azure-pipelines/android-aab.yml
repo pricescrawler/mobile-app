@@ -7,8 +7,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  ANDROID_SDK_ROOT: '$(HOME)/android-sdk'
-  GRADLE_USER_HOME: '$(HOME)/.gradle'
+  GRADLE_USER_HOME: '$(Pipeline.Workspace)/.gradle'
 
 steps:
   - checkout: self
@@ -16,7 +15,7 @@ steps:
 
   - task: JavaToolInstaller@0
     inputs:
-      versionSpec: '17'
+      versionSpec: '21'
       jdkArchitectureOption: 'x64'
       jdkSourceOption: 'PreInstalled'
     displayName: "JDK"
@@ -31,10 +30,10 @@ steps:
 
   - bash: |
       set -e
-      mkdir -p "$ANDROID_SDK_ROOT"
-      echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
-      yes | sdkmanager --licenses || true
-      sdkmanager "platform-tools" "platforms;android-36" "build-tools;36.0.0"
+      echo "sdk.dir=$ANDROID_HOME" > local.properties
+      SDKMANAGER="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+      yes | "$SDKMANAGER" --licenses > /dev/null
+      "$SDKMANAGER" "platform-tools" "platforms;android-36" "build-tools;36.0.0"
     displayName: "Install SDK"
 
   - task: DownloadSecureFile@1
@@ -52,6 +51,7 @@ steps:
       chmod +x ./gradlew
       ./gradlew clean :app:bundleRelease --no-daemon --stacktrace
     env:
+      VERSION_CODE: $(Build.BuildId)
       KEY_ALIAS: $(KEY_ALIAS)
       KEYSTORE_PASSWORD: $(KEYSTORE_PASSWORD)
       KEY_PASSWORD: $(KEY_PASSWORD)

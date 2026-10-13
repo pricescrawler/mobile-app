@@ -13,7 +13,7 @@ android {
         applicationId "io.github.pricescrawler.mobile"
         minSdk 26
         targetSdk 36
-        versionCode 8
+        versionCode (System.getenv("VERSION_CODE") ?: "8") as Integer
         versionName "0.1.7"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
